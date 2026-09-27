@@ -1,0 +1,13 @@
+services:
+  zepcode:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      ZEPVM_PASSWORD: change-me-now
+    restart: unless-stopped
+    volumes:
+      - workspace:/workspace
+volumes:
+  workspace:
